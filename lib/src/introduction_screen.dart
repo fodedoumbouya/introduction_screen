@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 import '/src/helper.dart';
 import '/src/model/page_view_model.dart';
@@ -415,16 +414,16 @@ class IntroductionScreenState extends State<IntroductionScreen> {
     _showBottom = widget.showBottomPart;
     _currentPage = initialPage.toDouble();
     _autoScroll(widget.autoScrollDuration);
-    if (widget.hideBottomOnKeyboard) {
-      final keyboardVisibilityController = KeyboardVisibilityController();
-      keyboardSubscription = keyboardVisibilityController.onChange.listen(
-        (bool visible) {
-          setState(() {
-            _showBottom = !visible;
-          });
-        },
-      );
-    }
+    // if (widget.hideBottomOnKeyboard) {
+    //   final keyboardVisibilityController = KeyboardVisibilityController();
+    //   keyboardSubscription = keyboardVisibilityController.onChange.listen(
+    //     (bool visible) {
+    //       setState(() {
+    //         _showBottom = !visible;
+    //       });
+    //     },
+    //   );
+    // }
   }
 
   @override
